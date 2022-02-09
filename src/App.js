@@ -105,10 +105,9 @@ function CustomControls({
   return (
     <>
       <h2>Custom controls:</h2>
-        <i>changing these will make the 'current day' highlight inaccurate :)</i>
         <div className="control-wrapper">
-          <label htmlFor="days">Number of days (28-31):</label>
-
+          <label htmlFor="days">Number of days in the month (28-31):</label>
+          <br />
           <input 
             type="number"
             id="days"
@@ -121,6 +120,7 @@ function CustomControls({
             }}></input>
         </div>
         <div className="control-wrapper">
+          <p>First day of the month:</p>
           {['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'].map(day => {
             return (
               <div key={`startday-control-${day}`}>
@@ -133,6 +133,7 @@ function CustomControls({
             )
           })}
         </div>
+        <i>changing these will make the 'current day' highlight inaccurate, since it's no longer a real month :)</i>
       </>
   )
 }
